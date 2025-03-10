@@ -24,4 +24,14 @@ import { DetalleReporteComponent } from './components/detalle-reporte/detalle-re
 })
 export class AppComponent {
   title = 'Sumativa';
+
+  crearReporte() {
+    // Lógica para crear un reporte
+    console.log('Crear reporte');
+  }
+
+  listarReportes() {
+    // Lógica para listar reportes
+    console.log('Lista de reportes');
+  }
 }
