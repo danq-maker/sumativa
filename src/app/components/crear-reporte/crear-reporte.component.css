@@ -1,0 +1,104 @@
+/* Estilos generales para el formulario */
+.crear-reporte {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #1e1e1e; /* Fondo oscuro */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.5s ease-in-out; /* Animación de entrada */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para encabezados */
+.crear-reporte h2 {
+  color: #76ff03; /* Verde brillante */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos de etiquetas */
+.crear-reporte label {
+  color: #e0e0e0; /* Texto claro */
+  margin-bottom: 5px;
+}
+
+/* Estilos de entradas y textarea */
+.crear-reporte input,
+.crear-reporte textarea {
+  background-color: #424242; /* Fondo de entrada oscuro */
+  color: #ffffff; /* Texto blanco */
+  border: 1px solid #76ff03; /* Borde verde */
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+/* Efecto al enfocar */
+.crear-reporte input:focus,
+.crear-reporte textarea:focus {
+  outline: none;
+  border-color: #4caf50; /* Verde más claro al enfocar */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Sombra al enfocar */
+}
+
+/* Estilos de botones */
+.crear-reporte button {
+  background-color: #1b5e20; /* Verde oscuro */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+  margin-top: 10px;
+  width: 100%; /* Botón ocupa todo el ancho */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.crear-reporte button:hover {
+  background-color: #4caf50; /* Verde más claro */
+  transform: translateY(-2px); /* Levantar el botón */
+}
+
+/* Estilos de vista previa de imagen */
+.crear-reporte img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Estilos de lista de reportes */
+.crear-reporte ul {
+  list-style-type: none; /* Sin viñetas */
+  padding: 0;
+  margin-top: 20px;
+}
+
+.crear-reporte li {
+  background-color: #2c2c2c; /* Fondo de tarjeta */
+  border: 1px solid #76ff03; /* Borde verde */
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.2s; /* Transición suave */
+}
+
+/* Efecto al pasar el mouse sobre los reportes */
+.crear-reporte li:hover {
+  transform: scale(1.02); /* Aumentar ligeramente el tamaño */
+} 

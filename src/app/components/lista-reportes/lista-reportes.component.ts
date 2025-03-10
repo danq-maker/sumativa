@@ -1,29 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Component } from '@angular/core';
 import { ReporteService } from '../../services/reporte.service';
+import { CommonModule } from '@angular/common'; // Importa CommonModule
 
 @Component({
   selector: 'app-lista-reportes',
-  standalone: true, // Este es un componente independiente
-  imports: [CommonModule, RouterModule], // Importa CommonModule y RouterModule
+  standalone: true, // Esto indica que es un componente independiente
+  imports: [CommonModule], // Asegúrate de incluir CommonModule aquí
   templateUrl: './lista-reportes.component.html',
   styleUrls: ['./lista-reportes.component.css']
 })
-export class ListaReportesComponent implements OnInit {
-  reportes: any[] = []; // Aquí almacenaremos los reportes
+export class ListaReportesComponent {
+  reportes: any[] = [];
 
-  constructor(private reporteService: ReporteService) {}
-
-  ngOnInit() {
-    // Al iniciar el componente, cargamos los reportes
-    this.reportes = this.reporteService.obtenerReportes();
+  constructor(private reporteService: ReporteService) {
+    this.reportes = this.reporteService.obtenerReportes(); // Obtiene la lista de reportes
   }
 
-  eliminarReporte(id: number) {
-    // Eliminamos el reporte por su ID
-    this.reporteService.eliminarReporte(id);
-    // Actualizamos la lista de reportes
-    this.reportes = this.reporteService.obtenerReportes();
+  eliminarReporte(id: string) {
+    this.reporteService.eliminarReporte(id); // Llama al método para eliminar el reporte
+    this.reportes = this.reporteService.obtenerReportes(); // Actualiza la lista de reportes
   }
 }

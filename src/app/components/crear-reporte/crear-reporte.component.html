@@ -1,25 +1,36 @@
-<div class="contenedor">
-    <h2>Crear Nuevo Reporte</h2>
+<div class="crear-reporte">
+  <h2>Crear Informe</h2>
   
-    <label for="idEquipo">ID del Equipo</label>
-    <input type="text" [(ngModel)]="idEquipo" placeholder="Ej: EQ-2024-001" />
-  
-    <label for="descripcion">Descripción del Problema</label>
-    <textarea [(ngModel)]="descripcion" placeholder="Describe el estado o problema del equipo..."></textarea>
-  
-    <button (click)="capturarFoto()">📷 Activar Cámara</button>
+  <form (ngSubmit)="guardarInforme()">
+    <div>
+      <label for="imagen">Imagen del Equipo:</label>
+      <button type="button" (click)="takePicture()">Tomar Foto</button>
+    </div>
     
-    <div *ngIf="!foto">
-      <video #videoElement width="300" height="200"></video>
-      <button (click)="tomarFoto()">📸 Tomar Foto</button>
+    <div>
+      <label for="idEquipo">ID del Equipo:</label>
+      <input type="text" [(ngModel)]="idEquipo" name="idEquipo" required />
     </div>
-  
-    <div *ngIf="foto">
-      <h3>Foto Capturada:</h3>
-      <canvas #canvasElement width="300" height="200" style="display:none"></canvas>
-      <img [src]="foto" alt="Foto del equipo" />
+    
+    <div>
+      <label for="descripcion">Descripción del Problema:</label>
+      <textarea [(ngModel)]="descripcion" name="descripcion" required></textarea>
     </div>
-  
-    <button (click)="guardarReporte()">💾 Guardar Reporte</button>
+    
+    <button type="submit">Guardar Informe</button>
+  </form>
+
+  <div *ngIf="imagen">
+    <h3>Vista Previa de la Imagen:</h3>
+    <img [src]="imagen" alt="Vista Previa" style="max-width: 100%; height: auto;" />
   </div>
+
   
+  <ul>
+    <li *ngFor="let reporte of reportes">
+      <strong>ID:</strong> {{ reporte.idEquipo }} <br />
+      <strong>Descripción:</strong> {{ reporte.descripcion }} <br />
+      <img [src]="reporte.imagen" alt="Reporte Imagen" style="max-width: 100px; height: auto;" />
+    </li>
+  </ul>
+</div>  

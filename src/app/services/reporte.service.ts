@@ -4,34 +4,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ReporteService {
-  private reportesKey = 'reportes'; // Clave para almacenar en localStorage
+  private reportes: any[] = []; // Array para almacenar los informes
 
-  constructor() { }
+  constructor() {}
 
-  // Método para obtener todos los reportes
-  obtenerReportes(): any[] {
-    const reportes = localStorage.getItem(this.reportesKey);
-    return reportes ? JSON.parse(reportes) : [];
+  agregarInforme(informe: any) {
+    this.reportes.push(informe); // Agrega el informe al array
   }
 
-  // Método para agregar un nuevo reporte
-  agregarReporte(reporte: any): void {
-    const reportes = this.obtenerReportes();
-    reporte.id = new Date().getTime(); // Generar un ID único basado en timestamp
-    reportes.push(reporte);
-    localStorage.setItem(this.reportesKey, JSON.stringify(reportes));
+  obtenerReportes() {
+    return this.reportes; // Devuelve la lista de informes
   }
 
-  // Método para obtener un reporte por ID
-  obtenerReportePorId(id: number): any | null {
-    const reportes = this.obtenerReportes();
-    return reportes.find(r => r.id === id) || null;
+  obtenerReportePorId(id: number) {
+    return this.reportes.find(reporte => reporte.idEquipo === id); // Busca el informe por ID
   }
 
-  // Método para eliminar un reporte por ID
-  eliminarReporte(id: number): void {
-    let reportes = this.obtenerReportes();
-    reportes = reportes.filter(r => r.id !== id);
-    localStorage.setItem(this.reportesKey, JSON.stringify(reportes));
+  eliminarReporte(id: string) {
+    this.reportes = this.reportes.filter(reporte => reporte.idEquipo !== id); // Elimina el informe por ID
   }
 }
