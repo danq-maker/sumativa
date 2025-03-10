@@ -16,6 +16,11 @@ body {
     top: 0; /* Desde la parte superior */
     height: 100%; /* Altura completa */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra para el menú */
+    transition: transform 0.3s ease; /* Transición suave */
+  }
+  
+  .sidebar.hidden {
+    transform: translateX(-100%); /* Mueve el menú fuera de la vista */
   }
   
   .sidebar-button {
@@ -34,7 +39,37 @@ body {
     background-color: #2980b9; /* Color al pasar el mouse */
   }
   
+  .close-button {
+    background-color: #e74c3c; /* Color de fondo del botón de cerrar */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    margin-bottom: 20px; /* Margen inferior */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave */
+  }
+  
+  .close-button:hover {
+    background-color: #c0392b; /* Color al pasar el mouse */
+  }
+  
   .content {
     margin-left: 220px; /* Espacio para el menú */
     padding: 20px; /* Espaciado interno del contenido */
+  }
+  
+  .toggle-button {
+    margin: 20px; /* Espaciado alrededor del botón */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    background-color: #3498db; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave */
+  }
+  
+  .toggle-button:hover {
+    background-color: #2980b9; /* Color al pasar el mouse */
   }

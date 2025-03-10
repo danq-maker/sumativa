@@ -8,7 +8,7 @@ import { DetalleReporteComponent } from './components/detalle-reporte/detalle-re
 
 @Component({
   selector: 'app-root',
-  standalone: true, // Esto indica que es un componente independiente
+  standalone: true,
   imports: [
     RouterOutlet,
     RouterLink,
@@ -24,14 +24,9 @@ import { DetalleReporteComponent } from './components/detalle-reporte/detalle-re
 })
 export class AppComponent {
   title = 'Sumativa';
+  isSidebarHidden = true; // Inicialmente el menú está oculto
 
-  crearReporte() {
-    // Lógica para crear un reporte
-    console.log('Crear reporte');
-  }
-
-  listarReportes() {
-    // Lógica para listar reportes
-    console.log('Lista de reportes');
+  toggleSidebar() {
+    this.isSidebarHidden = !this.isSidebarHidden; // Alternar el estado del menú
   }
 }

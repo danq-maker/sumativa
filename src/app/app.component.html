@@ -1,5 +1,8 @@
+<button (click)="toggleSidebar()" class="toggle-button">Toggle Menu</button>
+
 <div class="container">
-  <div class="sidebar">
+  <div class="sidebar" [class.hidden]="isSidebarHidden">
+    <button (click)="toggleSidebar()" class="close-button">Cerrar</button>
     <nav>
       <a routerLink="/crear-reporte" routerLinkActive="active" class="sidebar-button">Crear Reporte</a>
       <a routerLink="/reportes" routerLinkActive="active" class="sidebar-button">Lista de Reportes</a>
