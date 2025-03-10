@@ -1,0 +1,20 @@
+<div class="contenedor">
+    <h2>Lista de Reportes</h2>
+  
+    <div *ngIf="reportes.length === 0" class="mensaje-vacio">
+      No hay reportes registrados.
+    </div>
+  
+    <div *ngFor="let reporte of reportes" class="reporte">
+      <div class="reporte-info">
+        <p><strong>ID del Equipo:</strong> {{ reporte.idEquipo }}</p>
+        <p><strong>Fecha:</strong> {{ reporte.fecha | date: 'dd/MM/yyyy HH:mm' }}</p>
+        <p><strong>Descripción:</strong> {{ reporte.descripcion }}</p>
+      </div>
+  
+      <div class="reporte-acciones">
+        <a [routerLink]="['/detalle-reporte', reporte.id]" class="btn-ver">👁️ Ver Detalles</a>
+        <button (click)="eliminarReporte(reporte.id)" class="btn-eliminar">🗑️ Eliminar</button>
+      </div>
+    </div>
+  </div>

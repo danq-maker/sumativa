@@ -1,0 +1,20 @@
+.contenedor {
+    padding: 20px;
+  }
+  
+  img {
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+  
+  .btn-volver {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .btn-volver:hover {
+    text-decoration: underline;
+  }

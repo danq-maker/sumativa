@@ -1,0 +1,25 @@
+<div class="contenedor">
+    <h2>Crear Nuevo Reporte</h2>
+  
+    <label for="idEquipo">ID del Equipo</label>
+    <input type="text" [(ngModel)]="idEquipo" placeholder="Ej: EQ-2024-001" />
+  
+    <label for="descripcion">Descripción del Problema</label>
+    <textarea [(ngModel)]="descripcion" placeholder="Describe el estado o problema del equipo..."></textarea>
+  
+    <button (click)="capturarFoto()">📷 Activar Cámara</button>
+    
+    <div *ngIf="!foto">
+      <video #videoElement width="300" height="200"></video>
+      <button (click)="tomarFoto()">📸 Tomar Foto</button>
+    </div>
+  
+    <div *ngIf="foto">
+      <h3>Foto Capturada:</h3>
+      <canvas #canvasElement width="300" height="200" style="display:none"></canvas>
+      <img [src]="foto" alt="Foto del equipo" />
+    </div>
+  
+    <button (click)="guardarReporte()">💾 Guardar Reporte</button>
+  </div>
+  
