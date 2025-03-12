@@ -1,3 +1,69 @@
+/* styles.css */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    background-color: #f4f4f4; /* Fondo claro */
+    color: #333; /* Texto oscuro */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para el modo oscuro */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Botones */
+  button {
+    background-color: #76ff03; /* Verde brillante */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #5cbf02; /* Verde más oscuro al pasar el mouse */
+  }
+  
+  /* Enlaces */
+  a {
+    color: #76ff03;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Tarjetas */
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para el modo oscuro */
+  body.dark-mode {
+    background-color: #1e1e1e; /* Fondo oscuro */
+    color: #f4f4f4; /* Texto claro */
+  }
+  
+  body.dark-mode button {
+    background-color: #5cbf02; /* Verde más oscuro */
+  }
+  
+  body.dark-mode a {
+    color: #76ff03; /* Mantener el color de enlace */
+  }
+  
+  body.dark-mode .card {
+    background-color: #2c2c2c; /* Fondo de tarjeta oscuro */
+    border: 1px solid #76ff03; /* Borde verde */
+  }

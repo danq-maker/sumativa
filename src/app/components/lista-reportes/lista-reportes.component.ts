@@ -30,7 +30,7 @@ export class ListaReportesComponent {
   }
 
   verDetalle(id: string) {
-    this.router.navigate(['/detalle-reporte', id]);
+    this.router.navigate(['/detalle-reporte', id]); // Navegar al detalle del reporte
   }
 
   abrirModal(imagen: string) {

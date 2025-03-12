@@ -1,3 +1,5 @@
+/* detalle-reporte.component.css */
+
 .contenedor {
   padding: 20px;
   background-color: #f9f9f9;
@@ -24,5 +26,12 @@
 }
 
 .btn-volver:hover {
-  background-color: #0056b3;
+  background-color: #005 6b3; /* Color al pasar el mouse */
+}
+
+.img {
+  max-width: 100px;
+  height: auto;
+  margin-top: 10px;
+  cursor: pointer; /* Cambiar cursor al pasar sobre la imagen */
 }

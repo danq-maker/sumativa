@@ -1,3 +1,5 @@
+/* crear-reporte.component.css */
+
 /* Estilos generales para el formulario */
 .crear-reporte {
   max-width: 600px;
@@ -9,19 +11,7 @@
   animation: fadeIn 0.5s ease-in-out; /* Animación de entrada */
 }
 
-/* Animación de entrada */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Estilos para encabezados */
+/* Encabezados */
 .crear-reporte h2 {
   color: #76ff03; /* Verde brillante */
   text-align: center;
@@ -31,7 +21,7 @@
 /* Estilos de etiquetas */
 .crear-reporte label {
   color: #e0e0e0; /* Texto claro */
-  margin-bottom: 5 px;
+  margin-bottom: 5px;
 }
 
 /* Estilos de entradas y textarea */

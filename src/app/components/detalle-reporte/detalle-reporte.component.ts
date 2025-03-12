@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ReporteService } from '../../services/reporte.service';
 import { ActivatedRoute } from '@angular/router';
-import { CommonModule } from '@angular/common'; // Importa CommonModule
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detalle-reporte',
-  standalone: true, // Esto indica que es un componente independiente
-  imports: [CommonModule], // Asegúrate de incluir CommonModule aquí
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './detalle-reporte.component.html',
   styleUrls: ['./detalle-reporte.component.css']
 })

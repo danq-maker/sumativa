@@ -1,3 +1,4 @@
+// app.component.ts
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -25,8 +26,14 @@ import { DetalleReporteComponent } from './components/detalle-reporte/detalle-re
 export class AppComponent {
   title = 'Sumativa';
   isSidebarHidden = true; // Inicialmente el menú está oculto
+  isDarkMode = false; // Inicialmente el modo oscuro está desactivado
 
   toggleSidebar() {
     this.isSidebarHidden = !this.isSidebarHidden; // Alternar el estado del menú
+  }
+
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode; // Alternar el estado del modo oscuro
+    document.body.classList.toggle('dark-mode', this.isDarkMode); // Aplicar clase para el modo oscuro
   }
 }

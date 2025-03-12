@@ -17,7 +17,7 @@ export class ReporteService {
   }
 
   obtenerReportePorId(id: number) {
-    return this.reportes.find(reporte => reporte.idEquipo === id); // Busca el informe por ID
+    return this.reportes.find(reporte => reporte.idEquipo === id.toString()); // Busca el informe por ID
   }
 
   eliminarReporte(id: string) {

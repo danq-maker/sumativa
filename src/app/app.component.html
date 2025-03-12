@@ -1,3 +1,4 @@
+<!-- app.component.html -->
 <button (click)="toggleSidebar()" class="toggle-button">Toggle Menu</button>
 
 <div class="container">
@@ -7,6 +8,9 @@
       <a routerLink="/crear-reporte" routerLinkActive="active" class="sidebar-button">Crear Reporte</a>
       <a routerLink="/reportes" routerLinkActive="active" class="sidebar-button">Lista de Reportes</a>
     </nav>
+    <div class="sidebar-footer">
+      <button (click)="toggleDarkMode()" class="sidebar-button dark-mode-button">Toggle Dark Mode</button>
+    </div>
   </div>
   <div class="content">
     <router-outlet></router-outlet> <!-- Asegúrate de que solo haya un router-outlet -->

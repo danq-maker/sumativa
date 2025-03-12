@@ -5,12 +5,12 @@
     <p><strong>ID del Equipo:</strong> {{ reporte.idEquipo }}</p>
     <p><strong>Fecha:</strong> {{ reporte.fecha | date: 'dd/MM/yyyy HH:mm' }}</p>
     <p><strong>Descripción:</strong> {{ reporte.descripcion }}</p>
-    <img [src]="reporte.foto" alt="Foto del equipo" width="300" />
+    <img [src]="reporte.imagen" />
   </div>
 
   <ng-template #noEncontrado>
     <p>El reporte no fue encontrado.</p>
   </ng-template>
 
-  <a routerLink="/reportes" class="btn-volver">⬅️ Volver a la lista</a>
+  <button routerLink="/lista-reportes" class="btn-volver">⬅️ Volver a la lista</button>
 </div>

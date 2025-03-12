@@ -1,13 +1,63 @@
+/* lista-reportes.component.css */
+
 /* Estilos generales para la lista de reportes */
 .lista-reportes {
   max-width: 600px;
   margin: auto;
   padding: 20px;
-  background-color: #1e1e1e; /* Fondo oscuro */
+  background-color: #1e1e1e; /* Fondo oscuro en modo oscuro */
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.5s ease-in-out; /* Animación de entrada */
   margin-top: 20px; /* Añadir margen superior */
+}
+
+/* Encabezados */
+.lista-reportes h2 {
+  color: #76ff03; /* Verde brillante */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos de lista */
+.lista-reportes ul {
+  list-style-type: none; /* Sin viñetas */
+  padding: 0;
+  margin-top: 20px;
+}
+
+.reporte-item {
+  background-color: #2c2c2c; /* Fondo de tarjeta oscuro */
+  border: 1px solid #76ff03; /* Borde verde */
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s; /* Transición suave */
+}
+
+/* Efecto al pasar el mouse sobre los reportes */
+.reporte-item:hover {
+  transform: scale(1.02); /* Aumentar ligeramente el tamaño */
+}
+
+.reporte-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.reporte-header,
+.reporte-description,
+.reporte-date {
+  margin-bottom: 10px;
+  color: #ffffff; /* Texto blanco para mejor visibilidad en modo oscuro */
+}
+
+.reporte-image img {
+  max-width: 100px;
+  height: auto;
+  margin-top: 10px;
+  cursor: pointer; /* Cambiar cursor al pasar sobre la imagen */
 }
 
 /* Estilos para el modal */
