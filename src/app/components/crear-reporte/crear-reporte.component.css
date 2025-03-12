@@ -31,7 +31,7 @@
 /* Estilos de etiquetas */
 .crear-reporte label {
   color: #e0e0e0; /* Texto claro */
-  margin-bottom: 5px;
+  margin-bottom: 5 px;
 }
 
 /* Estilos de entradas y textarea */
@@ -101,4 +101,4 @@
 /* Efecto al pasar el mouse sobre los reportes */
 .crear-reporte li:hover {
   transform: scale(1.02); /* Aumentar ligeramente el tamaño */
-} 
+}

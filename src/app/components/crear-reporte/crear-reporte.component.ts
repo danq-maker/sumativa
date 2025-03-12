@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReporteService } from '../../services/reporte.service';
+import Swal from 'sweetalert2'; // Importa SweetAlert2
 
 @Component({
   selector: 'app-crear-reporte',
@@ -43,5 +44,13 @@ export class CrearReporteComponent {
     };
     this.reporteService.agregarInforme(informe); // Agrega el informe al servicio
     console.log('Informe guardado:', informe);
+
+    // Mostrar la alerta de éxito
+    Swal.fire({
+      title: '¡Éxito!',
+      text: 'El informe se ha guardado correctamente.',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
   }
 }
