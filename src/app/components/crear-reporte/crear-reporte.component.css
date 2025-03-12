@@ -93,10 +93,10 @@
   transform: scale(1.02); /* Aumentar ligeramente el tamaño */
 }
 
-/* Estilos de mensajes de error */
 .error {
   color: #ff5252; /* Rojo para mensajes de error */
   font-size: 12px;
+  margin-top: 5px; /* Espaciado superior para separar del campo */
 }
 
 /* Animación de entrada */

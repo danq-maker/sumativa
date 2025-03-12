@@ -39,10 +39,14 @@ export class CrearReporteComponent {
     // Validar que todos los campos estén llenos
     if (!this.idEquipo || !this.descripcion) {
       Swal.fire({
-        title: 'Error',
-        text: 'Por favor, completa todos los campos requeridos.',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
+        icon: "error",
+        title: "Error",
+        text: "Por favor, completa todos los campos requeridos.",
+        footer: '<a href="#">¿Por qué tengo este problema?</a>',
+        animation: true, // Activar animación
+        customClass: {
+          popup: 'animated-popup' // Clase personalizada para la animación
+        }
       });
       return;
     }
@@ -50,10 +54,14 @@ export class CrearReporteComponent {
     // Validar que el ID del equipo tenga exactamente 10 caracteres
     if (this.idEquipo.length !== 10) {
       Swal.fire({
-        title: 'Error',
-        text: 'El ID del equipo debe tener exactamente 10 caracteres.',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
+        icon: "error",
+        title: "Error",
+        text: "El ID del equipo debe tener exactamente 10 caracteres.",
+        footer: '<a href="#">¿Por qué tengo este problema?</a>',
+        animation: true, // Activar animación
+        customClass: {
+          popup: 'animated-popup' // Clase personalizada para la animación
+        }
       });
       return;
     }
@@ -69,10 +77,20 @@ export class CrearReporteComponent {
 
     // Mostrar la alerta de éxito
     Swal.fire({
-      title: '¡Éxito!',
-      text: 'El informe se ha guardado correctamente.',
-      icon: 'success',
-      confirmButtonText: 'Aceptar'
+      icon: "success",
+      title: "¡Éxito!",
+      text: "El informe se ha guardado correctamente.",
+      footer: '<a href="#">¿Por qué tengo este problema?</a>',
+      animation: true, // Activar animación
+      customClass: {
+        popup: 'animated-popup' // Clase personalizada para la animación
+      }
     });
+
+    // Reiniciar los campos después de guardar
+    this.idEquipo = '';
+    this.descripcion = '';
+    this.imagen = null;
+    reporteForm.resetForm(); // Reinicia el formulario
   }
 }

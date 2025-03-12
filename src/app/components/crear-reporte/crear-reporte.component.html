@@ -11,7 +11,7 @@
       <label for="idEquipo">ID del Equipo:</label>
       <input type="text" [(ngModel)]="idEquipo" name="idEquipo" required minlength="10" maxlength="10" />
       <div *ngIf="reporteForm.controls['idEquipo']?.invalid && (reporteForm.controls['idEquipo']?.touched || reporteForm.controls['idEquipo']?.dirty)">
-        <small class="error">El ID del equipo debe tener entre 10 caracteres.</small>
+        <small class="error">El ID del equipo debe tener exactamente 10 caracteres.</small>
       </div>
     </div>
     
