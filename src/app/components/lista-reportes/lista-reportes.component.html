@@ -1,13 +1,33 @@
 <div class="lista-reportes">
   <h2>Lista de Reportes</h2>
   <ul>
-    <li *ngFor="let reporte of reportes">
-      <strong>ID:</strong> {{ reporte.idEquipo }} <br />
-      <strong>Descripción:</strong> {{ reporte.descripcion }} <br />
-      <strong>Fecha:</strong> {{ reporte.fecha | date:'medium' }} <br />
-      <img [src]="reporte.imagen" alt="Reporte Imagen" style="max-width: 100px; height: auto;" />
-      <button (click)="eliminarReporte(reporte.idEquipo)">Eliminar</button>
-      <button (click)="verDetalle(reporte.idEquipo)">Ver Detalle</button> <!-- Botón para ver detalle -->
+    <li *ngFor="let reporte of reportes" class="reporte-item">
+      <div class="reporte-content">
+        <div class="reporte-header">
+          <strong>ID:</strong> {{ reporte.idEquipo }}
+        </div>
+        <div class="reporte-description">
+          <strong>Descripción:</strong> {{ reporte.descripcion }}
+        </div>
+        <div class="reporte-date">
+          <strong>Fecha:</strong> {{ reporte.fecha | date:'medium' }}
+        </div>
+        <div class="reporte-image" (click)="abrirModal(reporte.imagen)">
+          <img [src]="reporte.imagen" alt="Reporte Imagen" />
+        </div>
+      </div>
+      <div class="reporte-actions">
+        <button (click)="eliminarReporte(reporte.idEquipo)">Eliminar</button>
+        <button (click)="verDetalle(reporte.idEquipo)">Ver Detalle</button>
+      </div>
     </li>
   </ul>
+
+  <!-- Modal para mostrar la imagen expandida -->
+  <div class="modal" *ngIf="imagenExpandida" (click)="cerrarModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <span class="close" (click)="cerrarModal()">&times;</span>
+      <img [src]="imagenExpandida" alt="Imagen Expandida" />
+    </div>
+  </div>
 </div>
