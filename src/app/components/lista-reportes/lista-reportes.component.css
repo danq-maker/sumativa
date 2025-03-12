@@ -1,48 +1,37 @@
-.contenedor {
-    padding: 20px;
-  }
-  
-  .mensaje-vacio {
-    text-align: center;
-    color: #666;
-    font-style: italic;
-  }
-  
-  .reporte {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f9f9f9;
-  }
-  
-  .reporte-info {
-    flex: 1;
-  }
-  
-  .reporte-acciones {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .btn-ver {
-    text-decoration: none;
-    color: #007bff;
-    cursor: pointer;
-  }
-  
-  .btn-eliminar {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .btn-eliminar:hover {
-    background-color: #c82333;
-  }
+.lista-reportes {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.lista-reportes h2 {
+  color: #333;
+}
+
+.lista-reportes ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lista-reportes li {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.lista-reportes button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.lista-reportes button:hover {
+  background-color: #0056b3;
+}

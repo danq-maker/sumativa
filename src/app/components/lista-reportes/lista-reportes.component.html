@@ -4,9 +4,10 @@
     <li *ngFor="let reporte of reportes">
       <strong>ID:</strong> {{ reporte.idEquipo }} <br />
       <strong>Descripción:</strong> {{ reporte.descripcion }} <br />
-      <strong>Fecha:</strong> {{ reporte.fecha | date:'medium' }} <br /> <!-- Asegúrate de que 'fecha' esté en el objeto reporte -->
+      <strong>Fecha:</strong> {{ reporte.fecha | date:'medium' }} <br />
       <img [src]="reporte.imagen" alt="Reporte Imagen" style="max-width: 100px; height: auto;" />
       <button (click)="eliminarReporte(reporte.idEquipo)">Eliminar</button>
+      <button (click)="verDetalle(reporte.idEquipo)">Ver Detalle</button> <!-- Botón para ver detalle -->
     </li>
   </ul>
 </div>
