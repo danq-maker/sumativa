@@ -35,7 +35,29 @@ export class CrearReporteComponent {
     input.click();
   }
 
-  guardarInforme() {
+  guardarInforme(reporteForm: any) {
+    // Validar que todos los campos estén llenos
+    if (!this.idEquipo || !this.descripcion) {
+      Swal.fire({
+        title: 'Error',
+        text: 'Por favor, completa todos los campos requeridos.',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+      return;
+    }
+
+    // Validar que el ID del equipo tenga exactamente 10 caracteres
+    if (this.idEquipo.length !== 10) {
+      Swal.fire({
+        title: 'Error',
+        text: 'El ID del equipo debe tener exactamente 10 caracteres.',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+      return;
+    }
+
     const informe = {
       idEquipo: this.idEquipo,
       descripcion: this.descripcion,

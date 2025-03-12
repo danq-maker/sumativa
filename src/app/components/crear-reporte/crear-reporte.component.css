@@ -42,7 +42,7 @@
 .crear-reporte textarea:focus {
   outline: none;
   border-color: #4caf50; /* Verde más claro al enfocar */
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Sombra al enfocar */
+  box-shadow: 0 0 5px rgba(76, 175,  80, 0.5); /* Sombra al enfocar */
 }
 
 /* Estilos de botones */
@@ -91,4 +91,20 @@
 /* Efecto al pasar el mouse sobre los reportes */
 .crear-reporte li:hover {
   transform: scale(1.02); /* Aumentar ligeramente el tamaño */
+}
+
+/* Estilos de mensajes de error */
+.error {
+  color: #ff5252; /* Rojo para mensajes de error */
+  font-size: 12px;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

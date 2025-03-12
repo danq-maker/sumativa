@@ -1,7 +1,7 @@
 <div class="crear-reporte">
   <h2>Crear Informe</h2>
   
-  <form (ngSubmit)="guardarInforme()">
+  <form (ngSubmit)="guardarInforme(reporteForm)" #reporteForm="ngForm">
     <div>
       <label for="imagen">Imagen del Equipo:</label>
       <button type="button" (click)="takePicture()">Tomar Foto</button>
@@ -9,15 +9,21 @@
     
     <div>
       <label for="idEquipo">ID del Equipo:</label>
-      <input type="text" [(ngModel)]="idEquipo" name="idEquipo" required />
+      <input type="text" [(ngModel)]="idEquipo" name="idEquipo" required minlength="10" maxlength="10" />
+      <div *ngIf="reporteForm.controls['idEquipo']?.invalid && (reporteForm.controls['idEquipo']?.touched || reporteForm.controls['idEquipo']?.dirty)">
+        <small class="error">El ID del equipo debe tener entre 10 caracteres.</small>
+      </div>
     </div>
     
     <div>
       <label for="descripcion">Descripción del Problema:</label>
       <textarea [(ngModel)]="descripcion" name="descripcion" required></textarea>
+      <div *ngIf="reporteForm.controls['descripcion']?.invalid && (reporteForm.controls['descripcion']?.touched || reporteForm.controls['descripcion']?.dirty)">
+        <small class="error">La descripción es obligatoria.</small>
+      </div>
     </div>
     
-    <button type="submit">Guardar Informe</button>
+    <button type="submit" [disabled]="reporteForm.invalid">Guardar Informe</button>
   </form>
 
   <div *ngIf="imagen">
