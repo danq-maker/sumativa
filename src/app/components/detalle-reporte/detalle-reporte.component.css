@@ -2,36 +2,36 @@
 
 .contenedor {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #1e1e1e; /* Fondo oscuro */
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #ffffff; /* Texto blanco para mejor visibilidad en modo oscuro */
 }
 
 .contenedor h2 {
-  color: #333;
+  color: #76ff03; /* Verde brillante */
 }
 
 .contenedor p {
   margin: 10px 0;
 }
 
+.contenedor img {
+  max-width: 100%; /* Asegúrate de que la imagen no exceda el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 5px; /* Bordes redondeados para la imagen */
+}
+
 .btn-volver {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white; /* Color del texto */
   text-decoration: none;
   border-radius: 5px;
 }
 
 .btn-volver:hover {
-  background-color: #005 6b3; /* Color al pasar el mouse */
-}
-
-.img {
-  max-width: 100px;
-  height: auto;
-  margin-top: 10px;
-  cursor: pointer; /* Cambiar cursor al pasar sobre la imagen */
+  background-color: #0056b3; /* Color al pasar el mouse */
 }

@@ -13,6 +13,7 @@ import Swal from 'sweetalert2'; // Importa SweetAlert2
 export class CrearReporteComponent {
   idEquipo: string = '';
   descripcion: string = '';
+  nombre: string = ''; // Nuevo campo para el nombre
   imagen: string | ArrayBuffer | null = null;
 
   constructor(private reporteService: ReporteService) {}
@@ -37,15 +38,15 @@ export class CrearReporteComponent {
 
   guardarInforme(reporteForm: any) {
     // Validar que todos los campos estén llenos
-    if (!this.idEquipo || !this.descripcion) {
+    if (!this.idEquipo || !this.descripcion || !this.nombre) {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "Por favor, completa todos los campos requeridos.",
+ text: "Por favor, completa todos los campos requeridos.",
         footer: '<a href="#">¿Por qué tengo este problema?</a>',
-        animation: true, // Activar animación
+        animation: true,
         customClass: {
-          popup: 'animated-popup' // Clase personalizada para la animación
+          popup: 'animated-popup'
         }
       });
       return;
@@ -58,9 +59,9 @@ export class CrearReporteComponent {
         title: "Error",
         text: "El ID del equipo debe tener exactamente 10 caracteres.",
         footer: '<a href="#">¿Por qué tengo este problema?</a>',
-        animation: true, // Activar animación
+        animation: true,
         customClass: {
-          popup: 'animated-popup' // Clase personalizada para la animación
+          popup: 'animated-popup'
         }
       });
       return;
@@ -69,10 +70,11 @@ export class CrearReporteComponent {
     const informe = {
       idEquipo: this.idEquipo,
       descripcion: this.descripcion,
+      nombre: this.nombre, // Agregar el nombre al informe
       imagen: this.imagen,
-      fecha: new Date() // Agrega la fecha actual
+      fecha: new Date()
     };
-    this.reporteService.agregarInforme(informe); // Agrega el informe al servicio
+    this.reporteService.agregarInforme(informe);
     console.log('Informe guardado:', informe);
 
     // Mostrar la alerta de éxito
@@ -81,16 +83,17 @@ export class CrearReporteComponent {
       title: "¡Éxito!",
       text: "El informe se ha guardado correctamente.",
       footer: '<a href="#">¿Por qué tengo este problema?</a>',
-      animation: true, // Activar animación
+      animation: true,
       customClass: {
-        popup: 'animated-popup' // Clase personalizada para la animación
+        popup: 'animated-popup'
       }
     });
 
     // Reiniciar los campos después de guardar
     this.idEquipo = '';
     this.descripcion = '';
+    this.nombre = ''; // Reiniciar el campo nombre
     this.imagen = null;
-    reporteForm.resetForm(); // Reinicia el formulario
+    reporteForm.resetForm();
   }
 }

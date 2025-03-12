@@ -47,6 +47,7 @@
 }
 
 .reporte-header,
+.reporte-nombre,
 .reporte-description,
 .reporte-date {
   margin-bottom: 10px;
@@ -54,8 +55,8 @@
 }
 
 .reporte-image img {
-  max-width: 100px;
-  height: auto;
+  max-width: 100px; /* Limitar el tamaño de la imagen */
+  height: auto; /* Mantener la proporción de la imagen */
   margin-top: 10px;
   cursor: pointer; /* Cambiar cursor al pasar sobre la imagen */
 }

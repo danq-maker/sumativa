@@ -8,6 +8,14 @@
     </div>
     
     <div>
+      <label for="nombre">Nombre del Reportante:</label>
+      <input type="text" [(ngModel)]="nombre" name="nombre" required />
+      <div *ngIf="reporteForm.controls['nombre']?.invalid && (reporteForm.controls['nombre']?.touched || reporteForm.controls['nombre']?.dirty)">
+        <small class="error">El nombre es obligatorio.</small>
+      </div>
+    </div>
+    
+    <div>
       <label for="idEquipo">ID del Equipo:</label>
       <input type="text" [(ngModel)]="idEquipo" name="idEquipo" required minlength="10" maxlength="10" />
       <div *ngIf="reporteForm.controls['idEquipo']?.invalid && (reporteForm.controls['idEquipo']?.touched || reporteForm.controls['idEquipo']?.dirty)">
@@ -34,6 +42,7 @@
   <ul>
     <li *ngFor="let reporte of reportes">
       <strong>ID:</strong> {{ reporte.idEquipo }} <br />
+      <strong>Nombre:</strong> {{ reporte.nombre }} <br />
       <strong>Descripción:</strong> {{ reporte.descripcion }} <br />
       <img [src]="reporte.imagen" alt="Reporte Imagen" style="max-width: 100px; height: auto;" />
     </li>
